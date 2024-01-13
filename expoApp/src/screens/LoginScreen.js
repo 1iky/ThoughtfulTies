@@ -2,12 +2,18 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+//import { ArrowLeftIcon } from  '@heroicons/react';
 
 export default function LoginScreen() {
   const navigation = useNavigation();
     return (
       <View style={styles.container}>
       <View style={styles.purpleContainer}>
+        <TouchableOpacity onPress={()=> navigation.goBack()}>
+          <View style={styles.arrowButton}>
+            <Text style={styles.back}>Back</Text>
+          </View>
+        </TouchableOpacity>
         <Text style={styles.appTitle}>ThoughtfulTies</Text>
       </View>
       <View style={styles.whiteContainer}>
@@ -41,8 +47,6 @@ const styles = StyleSheet.create({
   purpleContainer: {
     flex: 1, 
     backgroundColor: '#8E70F5',
-    alignItems: 'center', 
-    justifyContent: 'center',
   },
   whiteContainer: {
     backgroundColor: '#fff',
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 230,
+    marginTop: 180,
     color: '#fff', 
   },
   textLabel: {
@@ -107,4 +111,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 500,
   },
+  back: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 10,
+  },
+  arrowButton: {
+    backgroundColor: '#F5C5AD',
+    padding: 15,
+    borderRadius: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 60,
+    height: 10,
+    marginLeft: 20,
+    marginTop: 45,
+  }
 });
