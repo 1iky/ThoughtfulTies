@@ -13,10 +13,10 @@ export default function WelcomeScreen() {
         
         <Text style={styles.text2}>Thoughtful Ties</Text>
         <View>
-          <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('SignUp')}>
-              <Text style={styles.buttonText}>Login</Text>
+          <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Login')}>
+              <Text style={styles.buttonText}>Log In</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Login')}>
+          <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('SignUp')}>
               <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
