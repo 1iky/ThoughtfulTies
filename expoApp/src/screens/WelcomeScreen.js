@@ -1,15 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function WelcomeScreen() {
+    const navigation = useNavigation();
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <Text style={styles.text}>Thoughtful Ties</Text>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.text1}>Welcome to</Text>
+        
+        <Text style={styles.text2}>Thoughtful Ties</Text>
         <View>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('SignUp')}>
+              <Text style={styles.buttonText}>Login</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Login')}>
               <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
@@ -25,11 +32,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
+  text1:{
+    color: '#fff',
+    fontSize: 16,
+    textAlign: 'left',
+    marginBottom: 75,
+  },
+  text2: {
     color: '#fff',
     fontSize: 32,
     //fontFamily: 'Josefin Sans',
+    marginBottom: 75,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   button: {
     backgroundColor: '#fff',
@@ -37,11 +52,13 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     width: 250,
     alignItems: 'center',
+    marginBottom: 25,
   },
   buttonText: {
-    color: 'black',
+    color: '#000',
     fontSize: 14,
     textAlign: 'center',
     fontWeight: 'bold',
+    borderRadius: 25,
   },
 });

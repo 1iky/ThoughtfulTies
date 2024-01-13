@@ -15,7 +15,7 @@ const AppNavigation = () => {
                 <Stack.Screen name="Welcome" options={{headerShown: false}} component={WelcomeScreen} />
                 <Stack.Screen name="Login" options={{headerShown: false}} component={LoginScreen} />
                 <Stack.Screen name="Signup" options={{headerShown: false}} component={SignUpScreen} />
-                //<Stack.Screen name="Home" options={{headerShown: false}} component={HomePage} />
+                
             </Stack.Navigator>
         </NavigationContainer>
     );
