@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-//import { ArrowLeftIcon } from  '@heroicons/react';
+
 
 export default function LoginScreen() {
   const navigation = useNavigation();
@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
   },
   textLabel: {
     fontSize: 13,
-    fontWeight: 'bold',
     marginBottom: 3,
     textAlign: 'left',
     alignSelf: 'flex-start',
