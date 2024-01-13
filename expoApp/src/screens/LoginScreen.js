@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 1, 
     backgroundColor: '#8E70F5',
     alignItems: 'center', 
-    //justifyContent: 'center',
+    justifyContent: 'center',
   },
   whiteContainer: {
     backgroundColor: '#fff',
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     marginBottom: 3,
     textAlign: 'left',
     alignSelf: 'flex-start',
-    marginLeft: 215,
+    marginLeft: 30,
   },
   title: {
     fontSize: 20,
