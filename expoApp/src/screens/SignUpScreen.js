@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
   whiteContainer: {
     backgroundColor: '#fff',
     height: 525,
-    borderTopLeftRadius: 40,
-    borderTopRightRadius: 40,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
     padding: 20,
     width: '100%',
     alignItems: 'center',
