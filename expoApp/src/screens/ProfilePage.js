@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const GalleryItem = ({ imageSource }) => (
   <Image source={imageSource} style={styles.galleryImage} />
@@ -13,6 +14,8 @@ export default function ProfilePage() {
   ];
 
   const hobbies = ['Reading', 'Painting', 'Cooking', 'Cleaning', 'Bingo'];
+
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -56,7 +59,7 @@ export default function ProfilePage() {
             <TouchableOpacity style={styles.bottomButton}>
                 <Image source={require('../../assets/icons/messages.png')} style={styles.bottomButtonImage} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.bottomButton}>
+            <TouchableOpacity style={styles.bottomButton} onPress={()=> navigation.navigate('Explore')}>
                 <Image source={require('../../assets/icons/newLogo.png')} style={styles.bottomButtonImage} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.bottomButton}>
