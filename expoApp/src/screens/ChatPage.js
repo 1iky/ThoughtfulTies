@@ -108,6 +108,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 40,
     backgroundColor: '#f5c5ad',
+    borderBottomLeftRadius: 30,
+      borderBottomRightRadius: 30,
   },
   headerTitleContainer: {
     flexDirection: 'row',
@@ -129,6 +131,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 35,
     backgroundColor: '#f5c5ad',
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
   },
   headerText: {
     color: '#000',
