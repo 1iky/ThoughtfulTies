@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, FlatList, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export default function App() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
+  const navigation = useNavigation();
 
   const autoResponses = [
     'Hello',
     'How are you?',
     'I\'m good',
     'I like knitting',
-    'What\'s yours hobbies',
+    'What\'s your hobbies',
     'Wow, me too!',
   ];
 
@@ -39,24 +41,29 @@ export default function App() {
     }
   };
 
-
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => alert('Back')}>
-            <Text style={styles.headerText}>Back</Text>
+          <TouchableOpacity onPress={()=> navigation.goBack()}>
+          <Image
+              source={require('../../assets/icons/backBlack.png')} 
+              style={styles.arrow}
+          />
           </TouchableOpacity>
           <View style={styles.headerTitleContainer}>
             <Image
-              source={require('./images/di9rb8p5T.jpg')} 
+              source={require('../../assets/images/friendE.png')} 
               style={styles.headerImage}
             />
-            <Text style={styles.headerText}>Bob Ross</Text>
+            <Text style={styles.headerText}>Austin</Text>
           </View>
           <TouchableOpacity onPress={() => alert('Map')}>
             <Text style={styles.headerText}>Map</Text>
           </TouchableOpacity>
         </View>
+
+        <Text style={styles.convoText}>Start a conversation!</Text>
+
         <View style={styles.container}>
           <FlatList
             data={messages}
@@ -68,6 +75,7 @@ export default function App() {
             )}
           />
         </View>
+        
         <View style={styles.headerBottom}>
           <TextInput
             style={styles.input}
@@ -76,7 +84,10 @@ export default function App() {
             onChangeText={(text) => setNewMessage(text)}
           />
           <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
-            <Text style={styles.sendButtonText}>Send</Text>
+            <Image
+              source={require('../../assets/icons/send.png')} 
+              style={styles.send}
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -88,6 +99,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
   header: {
     flexDirection: 'row',
@@ -98,24 +111,29 @@ const styles = StyleSheet.create({
   },
   headerTitleContainer: {
     flexDirection: 'row',
+    marginTop: 10,
+    marginHorizontal: 50,
     alignItems: 'center',
+
   },
   headerImage: {
-    width: 50,
-    height: 50, 
+    width: 60,
+    height: 60, 
     marginRight: 10,
+    marginTop: 10,
     borderRadius: 50,
   },
   headerBottom: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
+    padding: 35,
     backgroundColor: '#f5c5ad',
   },
   headerText: {
-    color: '#fff',
+    color: '#000',
     fontSize: 16,
+    
     fontWeight: 'bold',
   },
 
@@ -126,7 +144,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginVertical: 5,
     maxWidth: '80%',
-    marginRight: 5,
+    marginRight: 15,
   },
   appTitle: {
     fontSize: 13,
@@ -140,11 +158,13 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
     marginVertical: 5,
+    marginTop: 16,
     maxWidth: '80%',
-    marginLeft: 5,
+    marginLeft: 15,
   },
   messageText: {
-    color: '#fff',
+    color: '#000',
+    fontSize: 18
   },
   inputContainer: {
     flexDirection: 'row',
@@ -152,21 +172,35 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   input: {
-    flex: 1,
-    borderWidth: 1,
+    //flex: 1,
+    //borderWidth: 1,
     borderColor: '#ffb6c1',
-    borderRadius: 8,
-    padding: 10,
-    marginRight: 10,
+    borderRadius: 25,
+    padding: 15,
+    marginRight: 18,
+    width: 260,
     backgroundColor: '#fff'
   },
   sendButton: {
     backgroundColor: '#8E70f5',
-    padding: 10,
-    borderRadius: 8,
+    padding: 11,
+    borderRadius: 30,
   },
   sendButtonText: {
     color: '#fff',
     fontWeight: 'bold',
   },
+  arrow: {
+    width: 30,
+    height: 30,
+  },
+  send: {
+    width: 25,
+    height: 25,
+  },
+  convoText: {
+    color: '#777',
+    marginTop: 15,
+    textAlign: 'center',
+  }
 });
