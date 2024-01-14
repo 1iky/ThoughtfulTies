@@ -9,9 +9,10 @@ export default function LoginScreen() {
       <View style={styles.container}>
       <View style={styles.purpleContainer}>
         <TouchableOpacity onPress={()=> navigation.goBack()}>
-          <View style={styles.arrowButton}>
-            <Text style={styles.back}>Back</Text>
-          </View>
+          <Image
+              source={require('../../assets/icons/back.png')} 
+              style={styles.arrow}
+          />
         </TouchableOpacity>
         <Image style={styles.logo} source={require('../../assets/icons/newLogo.png')} />
         <Text style={styles.appTitle}>Thoughtful Ties</Text>
@@ -31,7 +32,7 @@ export default function LoginScreen() {
           placeholderTextColor='#999'
           secureTextEntry
         />
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={()=> navigation.navigate('Explore')}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
       </View>
@@ -110,23 +111,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 10,
   },
-  arrowButton: {
-    backgroundColor: '#F5C5AD',
-    padding: 15,
-    borderRadius: 60,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 60,
-    height: 10,
+  arrow: {
+    width: 30,
+    height: 30,
+    marginTop: 60,
     marginLeft: 20,
-    marginTop: 45,
   },
   logo: {
     height: 150,
     width: 150,
     resizeMode: 'contain',
     marginLeft: 125,
-    marginTop: 20,
+    marginTop: 10,
   },
 
 });
