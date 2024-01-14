@@ -62,7 +62,7 @@ export default function ProfilePage() {
             <TouchableOpacity style={styles.bottomButton} onPress={()=> navigation.navigate('Explore')}>
                 <Image source={require('../../assets/icons/newLogo.png')} style={styles.bottomButtonImage} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.bottomButton}>
+            <TouchableOpacity style={styles.bottomButton} onPress={()=> navigation.navigate('Profile')}>
                 <Image source={require('../../assets/icons/profile.png')} style={styles.bottomButtonImage} />
             </TouchableOpacity>
             </View>
