@@ -10,7 +10,7 @@ export default function WelcomeScreen() {
     <SafeAreaView style={styles.container}>
       <View>
         <Text style={styles.text1}>Welcome to</Text>
-        
+        <Image style={styles.logo} source={require('../../assets/icons/newLogo.png')} />
         <Text style={styles.text2}>Thoughtful Ties</Text>
         <View>
           <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Login')}>
@@ -34,21 +34,20 @@ const styles = StyleSheet.create({
   },
   text1:{
     color: '#fff',
-    fontSize: 16,
+    fontSize: 18,
     textAlign: 'left',
-    marginBottom: 75,
+    marginBottom: 40,
   },
   text2: {
     color: '#fff',
     fontSize: 32,
-    //fontFamily: 'Josefin Sans',
-    marginBottom: 75,
+    marginBottom: 60,
     fontWeight: 'bold',
     textAlign: 'center',
   },
   button: {
     backgroundColor: '#fff',
-    padding: 12,
+    padding: 20,
     borderRadius: 25,
     width: 250,
     alignItems: 'center',
@@ -60,5 +59,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     borderRadius: 25,
+  },
+  logo: {
+    height: 225,
+    width: 225,
+    resizeMode: 'contain',
+    marginLeft: 20,
+    marginBottom: 10,
   },
 });

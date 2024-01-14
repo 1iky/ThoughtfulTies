@@ -35,7 +35,7 @@ export default function SignUpScreen() {
           placeholderTextColor='#999'
           secureTextEntry
         />
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer} onPress={()=> navigation.navigate('Profile')}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
