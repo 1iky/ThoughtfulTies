@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
     paddingVertical: 1,
     backgroundColor: '#8e70f5',
     borderRadius: 50,
+    padding:10,
     marginTop: 20,
   },
   profilePic: {
@@ -172,9 +173,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
     borderRadius: 25,
   },
+  //image resize
   bottomButtonImage: {
-    width: 45,
-    height: 45,
+    width: 42,
+    height: 42,
+    resizeMode: 'contain',
   },
   bottomHeader: {
     flexDirection: 'row',
@@ -183,8 +186,8 @@ const styles = StyleSheet.create({
     flex: 1, 
   },
   bottomButton: {
-    paddingVertical: 8, 
-    paddingHorizontal: 8,
+    paddingVertical: 10, 
+    paddingHorizontal: 10,
     flex: 1,
     alignItems: 'center',
     paddingLeft: 5
