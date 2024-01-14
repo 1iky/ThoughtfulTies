@@ -13,7 +13,7 @@ export default function SignUpScreen() {
           </View>
         </TouchableOpacity>
         <Image style={styles.logo} source={require('../../assets/icons/newLogo.png')} />
-        <Text style={styles.appTitle}>ThoughtfulTies</Text>
+        <Text style={styles.appTitle}>Thoughtful Ties</Text>
       </View>
       <View style={styles.whiteContainer}>
         <Text style={styles.title} >Sign Up</Text>

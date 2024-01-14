@@ -14,7 +14,7 @@ export default function LoginScreen() {
           </View>
         </TouchableOpacity>
         <Image style={styles.logo} source={require('../../assets/icons/newLogo.png')} />
-        <Text style={styles.appTitle}>ThoughtfulTies</Text>
+        <Text style={styles.appTitle}>Thoughtful Ties</Text>
       </View>
       <View style={styles.whiteContainer}>
         <Text style={styles.title} >Log In</Text>
