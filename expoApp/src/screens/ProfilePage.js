@@ -56,7 +56,7 @@ export default function ProfilePage() {
         {/* Bottom Header */}
         <View style={styles.bottomBubble}>
             <View style={styles.bottomHeader}>
-            <TouchableOpacity style={styles.bottomButton}>
+            <TouchableOpacity style={styles.bottomButton} onPress={()=> navigation.navigate('Friends')}>
                 <Image source={require('../../assets/icons/messages.png')} style={styles.bottomButtonImage} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.bottomButton} onPress={()=> navigation.navigate('Explore')}>
