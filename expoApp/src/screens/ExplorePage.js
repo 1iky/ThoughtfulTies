@@ -1,22 +1,20 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const GalleryItem = ({ imageSource }) => (
   <Image source={imageSource} style={styles.galleryImage} />
 );
 
-export default function explore() {
-  const galleryData = [
-    { id: '1', image: require('../../assets/images/cat.jpeg') },
-    { id: '2', image: require('../../assets/images/cat.jpeg') },
-    { id: '3', image: require('../../assets/images/cat.jpeg') },
-  ];
+export default function ExplorePage() {
 
   const profileData = {
-    name: 'John Doe',
-    age: 25,
-    image: require('../../assets/images/cat.jpeg'),
+    name: 'Granny Smith',
+    age: 78,
+    image: require('../../assets/images/userGranny.png'),
   };
+
+  const navigation = useNavigation();
 
   return (
     <ScrollView style={styles.container}>
@@ -24,7 +22,7 @@ export default function explore() {
       <View style={styles.header}>
         <Text style={styles.headerText}>Hello Jane!</Text>
         <Text style={styles.subHeaderText}>Are you ready to explore some new friendships?</Text>
-        <Image source={require('../../assets/images/cat.jpeg')} style={styles.headerImage} />
+        <Image source={require('../../assets/icons/newLogo.png')} style={styles.headerImage} />
       </View>
 
       <Text style={styles.appTitle}>Explore</Text>
@@ -44,14 +42,14 @@ export default function explore() {
           {/* Thumbs Up Container */}
           <View style={styles.bottomButtonContainer}>
             <TouchableOpacity style={styles.bottomButton}>
-              <Image source={require('../../assets/images/cat.jpeg')} style={styles.bottomButtonImage} />
+              <Image source={require('../../assets/icons/thumbsDown.png')} style={styles.bottomButtonImage} />
             </TouchableOpacity>
           </View>
 
           {/* Thumbs Down Container */}
           <View style={styles.bottomButtonContainer}>
             <TouchableOpacity style={styles.bottomButton}>
-              <Image source={require('../../assets/images/cat.jpeg')} style={styles.bottomButtonImage} />
+              <Image source={require('../../assets/icons/thumbsUp.png')} style={styles.bottomButtonImage} />
             </TouchableOpacity>
           </View>
         </View>
@@ -61,13 +59,13 @@ export default function explore() {
       <View style={styles.bottomBubble}>
         <View style={styles.bottomHeader}>
           <TouchableOpacity style={styles.bottomButton}>
-            <Image source={require('../../assets/images/cat.jpeg')} style={styles.bottomButtonImage} />
+            <Image source={require('../../assets/icons/messages.png')} style={styles.bottomButtonImage} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.bottomButton}>
-            <Image source={require('../../assets/images/cat.jpeg')} style={styles.bottomButtonImage} />
+            <Image source={require('../../assets/icons/newLogo.png')} style={styles.bottomButtonImage} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.bottomButton}>
-            <Image source={require('../../assets/images/cat.jpeg')} style={styles.bottomButtonImage} />
+          <TouchableOpacity style={styles.bottomButton} onPress={()=> navigation.navigate('Profile')}>
+            <Image source={require('../../assets/icons/profile.png')} style={styles.bottomButtonImage} />
           </TouchableOpacity>
         </View>
       </View>
@@ -104,84 +102,85 @@ const styles = StyleSheet.create({
       backgroundColor: '#8e70f5',
       height: '20%', 
       padding: 20,
-      justifyContent: 'flex-end',
-      paddingBottom: 10,
-      position: 'relative',
+      borderBottomLeftRadius: 30,
+      borderBottomRightRadius: 30,
     },
   
     headerText: {
       color: '#fff',
       fontSize: 30, 
       fontWeight: 'bold',
+      marginTop: 60,
     },
   
     subHeaderText: {
       color: '#fff',
-      fontSize: 16,
+      fontSize: 14,
+      marginTop: 10,
+      marginBottom: 5,
     },
   
     headerImage: {
       position: 'absolute',
-      top: 20,
-      right: 30,
-      width: 80, 
-      height: 80, 
+      top: 30,
+      right: 20,
+      width: 90, 
+      height: 90, 
       borderRadius: 50,
     },
-  
     cardContainer: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
     },
-  
     profileImage: {
       width: 300,
       marginTop: 20,
       height: 300,
       borderRadius: 20,
     },
-  
     profileInfo: {
       alignItems: 'center',
       marginTop: 20, 
     },
-  
     profileName: {
       color: '#000000',
       fontSize: 24,
       fontWeight: 'bold',
     },
-  
     profileAge: {
       color: '#000000',
       fontSize: 16,
       marginBottom: 20,
     },
-
     thumb: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
         borderRadius: 20, 
-      },
-  
-      bottomBubble: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        borderTopWidth: 1,
-        borderTopColor: '#8e70f5',
-        paddingVertical: 1,
-        backgroundColor: '#8e70f5',
-        borderRadius: 50,
-        padding:10,
-        marginTop: 20,
-      },
-    
+
+    },
+    bottomBubble: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      borderTopWidth: 1,
+      borderTopColor: '#8e70f5',
+      paddingVertical: 1,
+      backgroundColor: '#8e70f5',
+      borderRadius: 50,
+      padding:10,
+      marginTop: 30,
+      marginHorizontal:10,
+    },
     bottomButtonContainer: {
-        flex: 1,
-        alignItems: 'center',
+      backgroundColor: '#8e70f5',
+      //padding: 10,
+      alignItems: 'center',
+      borderRadius: 50,
+      width: 75,
+      marginHorizontal: 30,
+      width: 110,
     },
     bottomButtonImage: {
         width: 42,
@@ -189,10 +188,10 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     bottomHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        flex: 1, 
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      flex: 1, 
     },
     bottomButton: {
         paddingVertical: 10, 
