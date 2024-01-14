@@ -12,6 +12,7 @@ export default function SignUpScreen() {
             <Text style={styles.back}>Back</Text>
           </View>
         </TouchableOpacity>
+        <Image style={styles.logo} source={require('../../assets/icons/newLogo.png')} />
         <Text style={styles.appTitle}>ThoughtfulTies</Text>
       </View>
       <View style={styles.whiteContainer}>
@@ -65,12 +66,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 180,
+    marginTop: 15,
     color: '#fff', 
   },
   textLabel: {
     fontSize: 13,
-
     marginBottom: 3,
     textAlign: 'left',
     alignSelf: 'flex-start',
@@ -96,24 +96,19 @@ const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: '#F5C5AD',
     padding: 12,
-    borderRadius: 25,
-    width: 100,
-    height: 50,
+    borderRadius: 40,
+    width: 200,
+    height: 60,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 30,
     
   },
   buttonText: {
-    color: '#fff',
+    color: '#000',
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 16,
-  },
-  logo: {
-    width: 200,
-    height: 200,
-    marginBottom: 20,
-    borderRadius: 500,
   },
   back: {
     color: '#fff',
@@ -130,5 +125,13 @@ const styles = StyleSheet.create({
     height: 10,
     marginLeft: 20,
     marginTop: 45,
-  }
+  },
+  logo: {
+    height: 150,
+    width: 150,
+    resizeMode: 'contain',
+    marginLeft: 125,
+    marginTop: 20,
+  },
+
 });
