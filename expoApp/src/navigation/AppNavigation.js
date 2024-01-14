@@ -7,6 +7,7 @@ import SignUpScreen from "../screens/SignUpScreen";
 import ProfilePage from "../screens/ProfilePage";
 import Explorepage from "../screens/ExplorePage";
 import ChatPage from "../screens/ChatPage";
+import FriendsPage from "../screens/FriendsPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ const AppNavigation = () => {
                 <Stack.Screen name="Profile" options={{headerShown: false}} component={ProfilePage} />
                 <Stack.Screen name="Explore" options={{headerShown: false}} component={Explorepage} />
                 <Stack.Screen name="Chat" options={{headerShown: false}} component={ChatPage} />
+                <Stack.Screen name="Friends" options={{headerShown: false}} component={FriendsPage} />
             </Stack.Navigator>
         </NavigationContainer>
     );
