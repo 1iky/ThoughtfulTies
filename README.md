@@ -16,7 +16,9 @@ Thoughtful Ties is a React Native-based mobile app, where friendships are woven 
 Thoughtful Ties is currently under development. Our team has plans for further implementation of new features and minor bug fixes.
 ## Installation <a name="installation"></a> 📩
 To install this project, follow these steps...
-- install the "Expo Go" app
+- clone this project
+- install the "Expo Go" app 
+- move into the folder: `cd expoApp`
 - run this command in the terminal: `npx expo start`
 - to tunnel your program connection: `--tunnel`
 - scan the QR code displayed in the terminal
